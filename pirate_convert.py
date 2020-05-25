@@ -55,3 +55,7 @@ for line in open("./cornell movie-dialogs corpus/movie_lines.txt",
     else:
         movie_lines[parts[0]] = ""
         movie_lines_pirate[parts[0]] = ""
+
+import pandas as pd
+(pd.DataFrame.from_dict(data=movie_lines_pirate, orient='index')
+   .to_csv('pirate_convert.csv', header=False))
